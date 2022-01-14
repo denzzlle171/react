@@ -11,7 +11,7 @@ import Avatar from './Avatar';
 //   );
 // };
 
-function UserInfo (props) {
+function UserInfo(props) {
     console.log(props)
     return (
       <div className="user-info">
