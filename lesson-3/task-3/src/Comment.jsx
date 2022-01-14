@@ -6,7 +6,6 @@ import UserInfo from './UserInfo';
 const formatDate = (date) => moment(date).format('DD MMM YYYY');
 
 function Comment(props) {
-  console.log(props)
   return (
     <div className="comment">
       <UserInfo user={props.author} />
