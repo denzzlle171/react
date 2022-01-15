@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import moment from 'moment';
 import './index.scss';
 import Greeting from './Greeting.jsx';
 
