@@ -2,19 +2,12 @@ import React, { Component } from 'react';
 import './clock.scss';
 import moment from 'moment';
 
-// let atime = new Date(Date.UTC(0));
-// console.log(atime);
-
 class Clock extends Component {
   constructor(props) {
-    console.log(props);
-
     super(props);
-
     this.state = {
       realTime: moment(new Date()).format('h:mm:ss A'),
     };
-    //
 
     setInterval(() => {
       this.setState({
@@ -32,7 +25,8 @@ class Clock extends Component {
     );
   }
 }
-//
 export default Clock;
 
 // moment(new Date()).format('h:mm:ss A'),
+// let atime = new Date(Date.UTC(0));
+// console.log(atime);
