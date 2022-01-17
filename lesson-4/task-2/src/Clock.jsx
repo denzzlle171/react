@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './clock.scss';
 import moment from 'moment';
 
-
 // let atime = new Date(Date.UTC(0));
 // console.log(atime);
 
