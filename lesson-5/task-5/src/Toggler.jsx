@@ -1,7 +1,7 @@
 import React from 'react';
 
 class Toggler extends React.Component {
-  buttonСondition = (e) => {
+  buttonCondition = (e) => {
     if (e.target.textContent === 'Off') {
       e.target.textContent = 'On';
     } else {
@@ -11,7 +11,7 @@ class Toggler extends React.Component {
 
   render() {
     return (
-      <button onClick={this.buttonСondition} className="toggler">
+      <button onClick={this.buttonCondition} className="toggler">
         Off
       </button>
     );
