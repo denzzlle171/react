@@ -14,7 +14,7 @@ class ColorPicker extends React.Component {
   render() {
     return (
       <div>
-        <div className="picker__title">Red</div>
+        <div className="picker__title"></div>
         <div>
           <button
             onMouseOver={this.showText.bind(this, 'Coral')}
@@ -37,3 +37,5 @@ class ColorPicker extends React.Component {
   }
 }
 export default ColorPicker;
+
+// Red;
