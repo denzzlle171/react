@@ -1,15 +1,20 @@
 import React from 'react';
 
 class ColorPicker extends React.Component {
-  showText = (color, e) => {
-    const elTitle = document.querySelector('.picker__title');
-    elTitle.textContent = color;
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeColor: null,
+    };
+  }
+
+  setTitle = title => {
+    this.setState({
+      activeColor: title,
+    });
   };
 
-  cleanText = () => {
-    const elTitle = document.querySelector('.picker__title');
-    elTitle.textContent = '';
-  };
+  clearTitle = () => this.setTitle(null);
 
   render() {
     return (
@@ -17,15 +22,17 @@ class ColorPicker extends React.Component {
         <div className="picker__title"></div>
         <div>
           <button
-            onMouseOver={this.showText.bind(this, 'Coral')}
-            onMouseOut={this.cleanText}
+            onMouseEnter={() => this.setTitle('Coral')}
+            onMouseLeave={this.clearTitle}
             className="picker__button picker__button_coral"
           ></button>
+          
           <button
             onMouseOver={this.showText.bind(this, 'Aqua')}
             onMouseOut={this.cleanText}
             className="picker__button picker__button_aqua"
           ></button>
+          
           <button
             onMouseOver={this.showText.bind(this, 'Bisque')}
             onMouseOut={this.cleanText}
