@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import UserGreeting from './UserGreeting';
- import GestGreeting from './GestGreeting';   
+ import GuestGreeting from './GuestGreeting';   
     
     
 const Greeting = (props) => {
@@ -8,7 +8,7 @@ const Greeting = (props) => {
     if (props.isLoggedIn) {
         return <UserGreeting />;
     }
-    return < GestGreeting />;
+    return <GuestGreeting />;
 };
 
 
