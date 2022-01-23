@@ -6,7 +6,6 @@ import Offline from './Offline';
 
 const Status = (props) => {
 
-  console.log(props.isOnline);
 
     if (props.isOnline) {
       return <Online />;
