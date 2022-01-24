@@ -44,3 +44,20 @@ console.log(this.state.isLoggedIn);
 
 }
 export default Auth;
+
+
+
+
+// лаконичное решение с булевним значением 
+// render() {
+//     const { processing, isLoggedIn } = this.state;
+
+//     if (processing) {
+//       return <Spinner size={24} />;
+//     }
+
+//     if (isLoggedIn) {
+//       return <Logout onLogout={this.logout} />;
+//     }
+//     return <Login onLogin={this.login} />;
+//   }
