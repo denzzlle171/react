@@ -9,12 +9,7 @@ this.state = {
    visible:true
     }
     this.toggle = this.toggle.bind(this);
-
 }
-
-
-
-  
 
   toggle()  {
     this.setState({
@@ -25,20 +20,15 @@ this.state = {
     return (
       <div>
         <button onClick={this.toggle}>Toggle</button>
-        <div>{this.state.visible && <Clock />}</div>
+        <div>{this.state.visible && <div className='component'>
+          <Clock location="London" offset="0" />
+          <Clock location="Kyiv" offset="2" />
+          <Clock location="New York" offset="-5" />
+        </div> }</div>
+
       </div>
     );
   }
 };
 export default App;
 
-
-
-//  return (
-//     <>
-//       <Clock location="London" offset="0" />
-//       <Clock location="Kyiv" offset="2" />
-//       <Clock location="New York" offset="-5" />
-//     </>
-//   );
-// };

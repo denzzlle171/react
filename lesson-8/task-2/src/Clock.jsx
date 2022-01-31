@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import moment from 'moment';
+
 
 class Clock extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class Clock extends Component {
   }
   //
   componentDidMount() {
-  this.interval = setInterval(() => {
+    this.interval = setInterval(() => {
       this.setState({
         date: new Date(),
       });
@@ -20,29 +20,19 @@ class Clock extends Component {
   }
 
   componentWillUnmount() {
-  clearInterval(this.interval);
-}
-
-
+    clearInterval(this.interval);
+  }
 
   render() {
     return (
       <div className="clock">
         <div className="clock__location">{this.props.location}</div>
-        <div className="clock__time">{this.state.date.toLocaleTimeString()}</div>
+        <div className="clock__time">
+          {this.state.date.toLocaleTimeString()}
+        </div>
       </div>
     );
   }
 }
 
 export default Clock;
-// moment().utcOffset(shift).format('h:mm:ss A');
-
-// render() {
-//     return (
-//       <div className="clock">
-//         <div className="clock__location">{this.props.location}</div>
-//         <div className="clock__time">{this.state.realTime}</div>
-//       </div>
-//     );
-  // }
