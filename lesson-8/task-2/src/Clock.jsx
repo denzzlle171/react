@@ -11,26 +11,22 @@ class Clock extends Component {
       date: this.getTimeWithOffset(this.props.offset),
     };
   }
-//
+
   getTimeWithOffset = offset => {
    
-  const currentTime = new Date();
+    const currentTime = new Date();
+   
   const utcOffset = currentTime.getTimezoneOffset() / 60;
-
   return new Date(currentTime.setHours(currentTime.getHours() + offset + utcOffset));
 };
 
-
-
-
-  //
   componentDidMount() {
     this.interval = setInterval(() => {
       this.setState({
         date: this.getTimeWithOffset(this.props.offset),
       });
     }, 1000);
-    //
+  
   }
 
   componentWillUnmount() {
