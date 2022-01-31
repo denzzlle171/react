@@ -5,15 +5,29 @@ import React, { Component } from 'react';
 class Clock extends Component {
   constructor(props) {
     super(props);
+
+
     this.state = {
-      date: new Date(),
+      date: this.getTimeWithOffset(this.props.offset),
     };
   }
+//
+  getTimeWithOffset = offset => {
+   
+  const currentTime = new Date();
+  const utcOffset = currentTime.getTimezoneOffset() / 60;
+
+  return new Date(currentTime.setHours(currentTime.getHours() + offset + utcOffset));
+};
+
+
+
+
   //
   componentDidMount() {
     this.interval = setInterval(() => {
       this.setState({
-        date: new Date(),
+        date: this.getTimeWithOffset(this.props.offset),
       });
     }, 1000);
     //

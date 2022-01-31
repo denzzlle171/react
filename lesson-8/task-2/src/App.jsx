@@ -21,9 +21,9 @@ this.state = {
       <div>
         <button onClick={this.toggle}>Toggle</button>
         <div>{this.state.visible && <div className='component'>
-          <Clock location="London" offset="0" />
-          <Clock location="Kyiv" offset="2" />
-          <Clock location="New York" offset="-5" />
+          <Clock location="London" offset={0} />
+          <Clock location="Kyiv" offset={2}/>
+          <Clock location="New York" offset={-5} />
         </div> }</div>
 
       </div>
