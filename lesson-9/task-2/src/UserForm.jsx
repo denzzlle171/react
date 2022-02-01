@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 
 class UserForm extends Component {
-  state = {
-    name: '',
-    student: '',
-    occupation: '',
-    about: '',
-  };
+  constructor(props) {
+    super(props);
+
+    console.log(this.props.createUser);
+
+    this.state = {
+      name: '',
+      student: '',
+      occupation: '',
+      about: '',
+    };
+  }
 
   handleChange = (event) => {
     const { name, value, checked, type } = event.target;
@@ -15,14 +21,20 @@ class UserForm extends Component {
       [name]: val,
     });
   };
-  onSubmit = (event) => {
+
+  // handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   console.log(this.state)
+  // };
+  
+  handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state);
+    this.props.createUser(this.state);
   };
 
   render() {
     return (
-      <form className="login-form" onSubmit={this.onSubmit}>
+      <form className="login-form" onSubmit={this.handleSubmit}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">
@@ -62,8 +74,8 @@ class UserForm extends Component {
           >
             <option value="london">London</option>
             <option value="new-york">New York</option>
-            <option value="coconut">Sidney</option>
-            <option value="mango">Berlin</option>
+            <option value="sidney">Sidney</option>
+            <option value="berlin">Berlin</option>
           </select>
         </div>
         <div className="form-control">
