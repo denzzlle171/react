@@ -11,18 +11,18 @@ class UserForm extends Component {
   handleChange = (event) => {
     const { name, value, checked, type } = event.target;
     const val = type === 'checkbox' ? checked : value;
-      this.setState({
-        [name]: val,
-      });
+    this.setState({
+      [name]: val,
+    });
   };
-  handleSubmit = (event) => {
+  onSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state)
+    console.log(this.state);
   };
 
   render() {
     return (
-      <form className="login-form" onSubmit={this.handleSubmit}>
+      <form className="login-form" onSubmit={this.onSubmit}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">
