@@ -4,7 +4,7 @@ class UserForm extends Component {
   constructor(props) {
     super(props);
 
-    console.log(this.props.createUser);
+    console.log(this.props.onSubmit);
 
     this.state = {
       name: '',
@@ -22,19 +22,14 @@ class UserForm extends Component {
     });
   };
 
-  // handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   console.log(this.state)
-  // };
-
-  onSubmit = (event) => {
+  handleSubmit = (event) => {
     event.preventDefault();
-    this.props.createUser(this.state);
+    this.props.onSubmit(this.state);
   };
 
   render() {
     return (
-      <form className="login-form" onSubmit={this.onSubmit}>
+      <form className="login-form" onSubmit={this.handleSubmit}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">
