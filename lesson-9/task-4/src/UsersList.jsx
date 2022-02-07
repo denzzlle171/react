@@ -7,7 +7,7 @@ class UsersList extends Component {
     super(props);
 
     this.state = {
-      value: '',
+      filterText: '',
       usersArr: this.props.users,
     };
 
@@ -16,13 +16,13 @@ class UsersList extends Component {
   handleChange = (event) => {
 
     this.setState ({
-      value: event.target.value,
+      filterText: event.target.value,
     })
     
     const filtredArr = this.props.users
       .filter((user) => user.name.toLowerCase() === event.target.value.toLowerCase());
     
-    const changeArr = !(this.state.value === '')
+    const changeArr = !(this.state.filterText === '')
       ? filtredArr
       : this.props.users;
     
@@ -37,7 +37,7 @@ class UsersList extends Component {
     return (
       <div>
         <Filter
-          filterText={this.state.value}
+          filterText={this.state.filterText}
           count={this.state.usersArr.length}
           onChange={this.handleChange}
         />
