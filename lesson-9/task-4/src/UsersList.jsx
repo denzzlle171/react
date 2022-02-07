@@ -20,7 +20,7 @@ class UsersList extends Component {
     })
     
     const filtredArr = this.props.users
-      .filter((user) => user.name.toLowerCase() === event.target.value.toLowerCase());
+      .filter((user) => user.name.toLowerCase().includes(this.state.filterText));
     
     const changeArr = !(this.state.filterText === '')
       ? filtredArr
