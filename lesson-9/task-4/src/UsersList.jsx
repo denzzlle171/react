@@ -14,10 +14,10 @@ class UsersList extends Component {
   }
   
   handleChange = (event) => {
-    
-  this.setState ({
-    value: event.target.value,
-   })
+
+    this.setState ({
+      value: event.target.value,
+    })
     
     const filtredArr = this.props.users
       .filter((user) => user.name.toLowerCase() === event.target.value.toLowerCase());
