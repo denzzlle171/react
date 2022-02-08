@@ -8,7 +8,7 @@ class UsersList extends Component {
 
     this.state = {
       filterText: '',
-      usersArr: this.props.users,
+      
     };
 
   }
@@ -19,30 +19,23 @@ class UsersList extends Component {
       filterText: event.target.value,
     })
     
-    const filtredArr = this.props.users
-      .filter((user) => user.name.toLowerCase().includes(this.state.filterText));
-    
-    const changeArr = !(this.state.filterText === '')
-      ? filtredArr
-      : this.props.users;
-    
-    this.setState({
-      usersArr: changeArr,
-    });
-   
   };
   
   render() {
+    const { users } = this.props
+    const {filterText} = this.state
+    const userToDisplay = users
+    .filter((user) => user.name.toLowerCase().includes(filterText));
 
     return (
       <div>
         <Filter
-          filterText={this.state.filterText}
-          count={this.state.usersArr.length}
+          filterText={filterText}
+          count={userToDisplay.length}
           onChange={this.handleChange}
         />
         <ul className="users">
-          {this.state.usersArr.map((user) => (
+          {userToDisplay.map((user) => (
             <User 
               key={user.id}
               name={user.name}
