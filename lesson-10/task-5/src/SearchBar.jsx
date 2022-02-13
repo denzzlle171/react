@@ -1,13 +1,7 @@
 import React  from 'react';
 
-
-
 class SearchBar extends React.Component {
-  constructor(props) {
-    super(props);
-    
-  }
-
+  
   handleFilterTextChange=(e)=> {
     this.props.onFilterTextChange(e.target.value);
   }
@@ -15,12 +9,7 @@ class SearchBar extends React.Component {
   handleInStockChange=(e)=> {
     this.props.onInStockChange(e.target.checked);
   }
-
   render() {
-   
-    console.log(this.props);
-    
-
     const {filterText, inStockOnly} = this.props
     return (
       <form>
@@ -44,4 +33,3 @@ class SearchBar extends React.Component {
 }
 
 export default SearchBar;
-  
