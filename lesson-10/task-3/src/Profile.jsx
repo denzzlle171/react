@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import UserForm from './UserForm.jsx';
- 
+
 const Profile = ({ userData, handleChange }) => {
   return (
     <div className="column">

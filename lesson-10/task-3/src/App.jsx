@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import ShoppingCart from './ShoppingCart.jsx'
-import Profile from './Profile.jsx'
-
+import ShoppingCart from './ShoppingCart.jsx';
+import Profile from './Profile.jsx';
 
 class Page extends Component {
   state = {
@@ -27,7 +26,7 @@ class Page extends Component {
       <div className="page">
         <h1 className="title">{`Hello, ${userData.firstName} ${userData.lastName}`}</h1>
         <main className="content">
-          <ShoppingCart userData={userData} />
+          <ShoppingCart userName={userData.firstName} />
           <Profile userData={userData} handleChange={this.handleChange} />
         </main>
       </div>
@@ -35,5 +34,3 @@ class Page extends Component {
   }
 }
 export default Page;
-
-
