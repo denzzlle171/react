@@ -3,7 +3,7 @@ import Expand from './Expand';
 
 class App extends React.Component {
   state = {
-    isContent: true
+    isContent: false
   }
   
   toggle = () => {
