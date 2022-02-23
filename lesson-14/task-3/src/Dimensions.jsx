@@ -29,7 +29,7 @@ const handleResize = (e) => {
 
 
 
-  return <div className="dimensions">{`${width}px x ${height}px`}</div>;
+  return <div className="dimensions">{`${width} x ${height}`}</div>;
 }
  export default Dimensions;
 
