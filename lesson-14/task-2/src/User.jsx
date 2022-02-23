@@ -5,7 +5,9 @@ import { useParams } from 'react-router-dom';
 const User = () => {
 
     const [userData, setUserData] = useState(null);
+    
     const { userId } = useParams();
+
     useEffect(() => {
       fetch(`https://api.github.com/users/${userId}`)
         .then((res) => {
