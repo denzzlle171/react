@@ -6,11 +6,11 @@ import Home from './Home';
 
 const App = () => {
     return (
-      <div className="page" >
+      <div className="page">
         <Routes>
-          <Route to="/" component={Home}/>
-          <Route to="/products" component={Products}/>
-          <Route to="/contacts" component={Contacts}/>
+          <Route path="/" element={<Home/>} />
+          <Route path="/products" element={<Products/>} />
+          <Route path="/contacts" element={<Contacts/>} />
         </Routes>
       </div>
     );
